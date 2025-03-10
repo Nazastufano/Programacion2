@@ -11,7 +11,8 @@ Begin
     printf(" Rectangulo con base b %d / y altura h %d \n", b, h, b);
     printf(" Superficie: %d \t Perimetro: %d", b*h, 2*b + 2*h);
     return 0;
-End;*/
+End;
+*/
 
 void main() {
     int b, h = 3;
@@ -20,6 +21,4 @@ void main() {
     printf("Bienvenido a Programacion B\n");
     printf(" Rectangulo con base b %d / y altura h %d \n", b, h, b);
     printf(" Superficie: %d \t Perimetro: %d", b*h, 2*b + 2*h);
-    
-    //return 0;
 }
