@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*8) Completar la expresión del siguiente if para que se ejecute su parte verdadera y la variable a
+/* 8. Completar la expresión del siguiente if para que se ejecute su parte verdadera y la variable a
 contenga el valor 1 luego de esa sentencia.
 
 int a = 0;

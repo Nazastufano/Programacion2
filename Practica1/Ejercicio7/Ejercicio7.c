@@ -1,5 +1,4 @@
-/* 
-Indicar los valores que almacenan las variables en las siguientes instrucciones de lectura:
+/* 7. Indicar los valores que almacenan las variables en las siguientes instrucciones de lectura:
 a) int a;
 // leer a = 3 
 scanf("%d", &a); ______3______

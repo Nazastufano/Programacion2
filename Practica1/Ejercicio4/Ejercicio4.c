@@ -1,4 +1,4 @@
-/*4. Completar el resultado que muestran los siguientes programas:
+/* 4. Completar el resultado que muestran los siguientes programas:
 a) #include <stdio.h>
 int main(){
     int a, b, c = 3, d = 2;

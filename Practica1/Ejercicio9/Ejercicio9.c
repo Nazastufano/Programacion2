@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*9. Reescribir las siguientes sentencias utilizando la instrucción switch:
+/* 9. Reescribir las siguientes sentencias utilizando la instrucción switch:
 
 If (x == 4)
     y = 7;

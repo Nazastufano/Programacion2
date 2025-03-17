@@ -1,5 +1,5 @@
 #include <stdio.h>
-/*10) Reescribir cada una de las siguientes porciones de código en una sola sentencia mediante el uso
+/* 10. Reescribir cada una de las siguientes porciones de código en una sola sentencia mediante el uso
 del operador condicional:
 
 a)  if(a < b)

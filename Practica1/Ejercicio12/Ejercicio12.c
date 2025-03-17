@@ -1,5 +1,5 @@
 #include <stdio.h>
-/* 12) Desarrollar un programa que muestre la suma de un conjunto de números naturales ingresados
+/* 12. Desarrollar un programa que muestre la suma de un conjunto de números naturales ingresados
 por teclado. La serie finaliza al ingresar el número 0. */
 
 void main() {

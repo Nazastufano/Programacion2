@@ -1,5 +1,5 @@
 #include <stdio.h>
-/*11) Desarrollar una macro que devuelva cada uno de los siguientes resultados:
+/* 11. Desarrollar una macro que devuelva cada uno de los siguientes resultados:
 a) Máximo de 2 números 
 b) Caracter es alfabético
 

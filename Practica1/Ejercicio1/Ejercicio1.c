@@ -1,4 +1,4 @@
-/*1. Dados los siguientes tipos de datos del lenguaje Pascal: char, integer, longint, word, real y
+/* 1. Dados los siguientes tipos de datos del lenguaje Pascal: char, integer, longint, word, real y
 double; obtener el tipo equivalente en el lenguaje C especificando la cantidad de bytes que
 ocupa y su cadena de formato. 
 

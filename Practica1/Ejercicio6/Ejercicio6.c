@@ -1,4 +1,4 @@
-/*6. Obtener el resultado de las siguientes expresiones, previa asignación de valores a las cuatro
+/* 6. Obtener el resultado de las siguientes expresiones, previa asignación de valores a las cuatro
 variables:
 a) a + b * c / d
 b) (a + b) * c % d

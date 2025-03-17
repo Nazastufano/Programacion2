@@ -1,4 +1,4 @@
-/*3. Describir lo que imprimen los siguientes fragmentos de código (justificar si no imprimen nada):
+/* 3. Describir lo que imprimen los siguientes fragmentos de código (justificar si no imprimen nada):
 a) char A;
 A = 'a';
 printf(" %c ", A); ______" a "______
