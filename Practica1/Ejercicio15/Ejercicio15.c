@@ -3,7 +3,7 @@
 /* 15. Desarrollar una función que reciba tres números enteros y devuelva si son consecutivos entre sí
 o si no lo son. */
 
-int SonConsecutivos(int a, int b, int c);
+void SonConsecutivos(int a, int b, int c);
 
 void main(){
     int num1,num2,num3;
@@ -13,7 +13,7 @@ void main(){
     SonConsecutivos(num1,num2,num3);
 }
 
-int SonConsecutivos(int a, int b, int c){
+void SonConsecutivos(int a, int b, int c){
     int aux;
     while (a>b || b>c || a>c) {
         if (a>b) {
@@ -31,5 +31,8 @@ int SonConsecutivos(int a, int b, int c){
         }
     }
     
-    return (b == a+1 && c == b+1) ? printf("Son consecutivos") : printf("No son consecutivos");
+    if (b == a+1 && c == b+1)
+        printf("Son consecutivos");
+    else 
+        printf("No son consecutivos");
 }
