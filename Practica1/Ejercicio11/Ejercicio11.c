@@ -15,8 +15,8 @@ void main(){
     scanf("%d %d", &num1, &num2);
     
     printf("El maximo entre %d y %d es: %d \n",num1,num2, maximo(num1,num2));
+    
     //b)
-
     printf("Ingrese un caracter: ");
     scanf(" %c", &car);
     
