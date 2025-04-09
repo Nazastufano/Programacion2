@@ -20,7 +20,6 @@ void main(){
     
     CargarArreglo(v);
 
-
     do {
         printf("Que operacion desea ejecutar? \n");
         printf("1. Mostrar los elementos de las posiciones impares \n");
@@ -47,8 +46,7 @@ void main(){
             else
                 printf("El elemento %d no se encuentra en el arreglo \n", x);
             break;
-        default:
-        
+        default:        
             break;
         }
     } while (res != 0);
