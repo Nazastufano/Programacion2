@@ -11,29 +11,29 @@ typedef struct{
     int puntaje;
 } TRegTenistas;
 
-void LecEscriArch(FILE *, FILE *);
-void MuestraPorPos(FILE *, int);
+void LecEscriArch(char *, char *);
+void MuestraPorPos(char *, int);
 
 void main(){
-    FILE *archT, *archB;
     int pos;
 
-    LecEscriArch(archT,archB); //testeo
+    LecEscriArch("datos.txt", "tenistas.dat"); //testeo
 
     printf("Ingrese una posicion para buscar un tenista \n");
     scanf("%d", &pos);
     
-    MuestraPorPos(archB, pos);
+    MuestraPorPos("tenistas.dat", pos);
 }
 //agregado innecesario para probar el ejercicio y practicar con lectura de archivo de texto
-void LecEscriArch(FILE *archT, FILE *archB){
+void LecEscriArch(char *nomArchT, char *nomArchB){
     TRegTenistas reg;
+    FILE *archT, *archB;
     char apellido[15], nombre[15];
-    archT = fopen("datos.txt", "r");
+    archT = fopen(nomArchT, "r");
     if (archT == NULL)
         printf("Error al abrir el archivo de texto, es posible que no exista");
     else {
-        archB = fopen("tenistas.dat", "wb");
+        archB = fopen(nomArchB, "wb");
         if (archB == NULL) {
             printf("Error al abrir el archivo binario, es posible que no exista");
             fclose(archT);
@@ -51,10 +51,10 @@ void LecEscriArch(FILE *archT, FILE *archB){
     }
 }
 //Ejercicio:
-void MuestraPorPos(FILE *archB, int pos){
+void MuestraPorPos(char *nomArchB, int pos){
     TRegTenistas reg;
-
-    archB = fopen("tenistas.dat", "rb");
+    FILE *archB;
+    archB = fopen(nomArchB, "rb");
     if (archB == NULL)
         printf("Fallo al abrir el archivo binario. Es posible que no exista");
     else {

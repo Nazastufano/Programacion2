@@ -6,19 +6,18 @@ registradas en un archivo binario, donde cada elemento es de tipo float. Impleme
 programa que genere dicho archivo y, otro programa que lo lea y muestre por pantalla
 temperatura promedio, máxima y mínima. */
 
-void CargaArchivo(FILE *);
-void LecturaArchivo(FILE *);
+void CargaArchivo(char *);
+void LecturaArchivo(char *);
 
 void main(){
-    FILE *arch;
-    
-    CargaArchivo(arch);
-    LecturaArchivo(arch);   
+    CargaArchivo("datos.dat");
+    LecturaArchivo("datos.dat");   
 }
 
-void CargaArchivo(FILE *arch){
+void CargaArchivo(char *nomArch){
+    FILE *arch;
     float num;
-    arch = fopen("datos.dat", "wb");
+    arch = fopen(nomArch, "wb");
     if (arch == NULL)
         printf("Error en la apertura. Es posible que el archivo no exista \n");
     else {
@@ -31,10 +30,11 @@ void CargaArchivo(FILE *arch){
     fclose(arch);
 }
 
-void LecturaArchivo(FILE *arch){
+void LecturaArchivo(char *nomArch){
+    FILE *arch;
     float num, tempMax = 0, tempMin, suma = 0;
     int cantMedi = 0;
-    arch = fopen("datos.dat", "rb");
+    arch = fopen(nomArch, "rb");
     
     if (arch == NULL) 
         printf("Error de la apertura. Es posible que el archivo no exista \n");

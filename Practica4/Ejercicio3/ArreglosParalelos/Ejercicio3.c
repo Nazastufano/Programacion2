@@ -10,15 +10,43 @@ registros.
 Mejorar el operador buscar por nombre, recodificándolo como búsqueda binaria. */
 
 void main(){
-    datosContacto contactos;
-    int tam = 0;
-    iniciarAgenda(&contactos, &tam);
+    agendaContactos contactos;
+    TElementoDC nom[15],num[15];
+    int i, pos, tam = 0;
+    contactos = iniciarAgenda();
+
+    do{
+        printf("Cuantos contactos desea ingresar?\n");
+        scanf("%d", &tam);          
+    } while (tam<1 || tam>SIZE);
     
-    listarAgenda(contactos, tam);
+    for (i = 0; i < tam; i++){
+        printf("Ingrese el nombre del contacto %d\n", i+1);
+        scanf("%s", nom);
+        
+        printf("Ingrese el numero del contacto %d\n", i+1);
+        scanf("%s", num);
 
-    agregarContacto(&contactos, &tam);
-    listarAgenda(contactos, tam);
+        agregarContacto(&contactos, nom, num);
+    }
 
-    buscarNombre(contactos, tam);
-    buscarNombreBinaria(contactos, tam);
+    listarAgenda(contactos);
+
+    printf("Ingrese el nombre a buscar: ");
+    scanf("%s", nom);
+    pos = buscarNombre(contactos, nom);
+    if (pos >= 0)
+        printf("El numero de telefono del contacto: %s es: %s\n", nom, contactos.numero[pos]);
+    else
+        printf("El contacto: %s no se encuentra en la agenda\n", nom);   
+
+
+    printf("Ingrese el nombre a buscar: ");
+    scanf("%s", nom);
+    
+    pos = buscarNombreBinaria(contactos, nom);
+    if (pos >= 0)
+        printf("El numero de telefono del contacto: %s es: %s\n", nom, contactos.numero[pos]);
+    else
+        printf("El contacto: %s no se encuentra en la agenda\n", nom);
 }

@@ -14,27 +14,25 @@ typedef struct {
     int velocidad, velMax;
 } TRegVigia;
 
-void LecEscriArch(FILE *, FILE *);
+void LecEscriArch(char *, char *);
 
 void main(){
-    FILE *archT, *archB;
-    
-    LecEscriArch(archT,archB);
+    LecEscriArch("mediciones.txt","registros.dat");
 }
 
-void LecEscriArch(FILE *archT, FILE *archB){
+void LecEscriArch(char *nomArchT, char *nomArchB){
+    FILE *archT, *archB;
     TRegVigia reg;
     int cantMedProc=0, cantRegGen=0;
-    archT = fopen("mediciones.txt", "r");
+    archT = fopen(nomArchT, "r");
     if (archT == NULL)
         printf("Error en la apertura del archivo de texto. Es posible que el archivo no exista \n");
     else {
-        archB = fopen("registros.dat", "wb");
+        archB = fopen(nomArchB, "wb");
         if (archB == NULL) {
             printf("Error en la apertura del archivo binario. Es posible que el archivo no exista \n");
             fclose(archT);
         } else {
-            //fscanf(archT, "%s %d %d %s %s", reg.patente, &reg.velocidad, &reg.velMax, reg.fecha, reg.hora);
             while (fscanf(archT, "%s %d %d %s %s", reg.patente, &reg.velocidad, &reg.velMax, reg.fecha, reg.hora) == 5){
                 cantMedProc++;
                 if (reg.velocidad>reg.velMax*1.2){
@@ -42,7 +40,6 @@ void LecEscriArch(FILE *archT, FILE *archB){
                     
                     fwrite(&reg, sizeof(TRegVigia), 1, archB);
                 }
-                //fscanf(archT, "%s %d %d %s %s", reg.patente, &reg.velocidad, &reg.velMax, reg.fecha, reg.hora);
             }
             fclose(archB);
             fclose(archT);

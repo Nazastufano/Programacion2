@@ -14,7 +14,7 @@ int tamanio(Texto t);
 
 void imprimir(Texto t);
 
-void imprimirArch(Texto t, FILE * arch);
+void imprimirArch(Texto t, char * nomArch);
 
 char caracterEn(Texto texto, int posicion);
 

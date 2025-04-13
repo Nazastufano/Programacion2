@@ -13,19 +13,20 @@ typedef struct {
     float tempMax, tempMin;
 } TRDatosTemp;
 
-void main(){
-    FILE *archB;
+void MostrarTemp(char *);
 
-    MostrarTemp(archB);
+void main(){
+    MostrarTemp("temperaturas.dat");
 }
 
-void MostrarTemp(FILE *archB){
+void MostrarTemp(char *nomArch){
     TRDatosTemp reg;
+    FILE *archB;
     float menorTemp = 99;
     unsigned int diaMenorTemp;
     char nomMenorTemp[21];
 
-    if ((archB = fopen("temperaturas.dat", "rb")) == NULL)
+    if ((archB = fopen(nomArch, "rb")) == NULL)
         printf("Error al abrir el archivo. Es posible que el archivo no exista");
     else {
         while (fread(&reg, sizeof(TRDatosTemp), 1, archB) == 1) {

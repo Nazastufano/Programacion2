@@ -1,20 +1,25 @@
 #define SIZE 50
 #include <stdio.h>
 #include <string.h>
-
+typedef char TElementoDC;
 typedef struct {
-    char nombre[15];
-    char numero[15];
+    TElementoDC nombre[15];
+    TElementoDC numero[15];
 } datosContacto;
 
-void insertarOrdenado(datosContacto contactos[SIZE], char nom[15], char num[15], int tam);
+typedef struct {
+    datosContacto datos[SIZE];
+    int cant;
+} agendaContactos;
 
-void iniciarAgenda(datosContacto contactos[SIZE], int *tam);
+void insertarOrdenado(agendaContactos *contactos, TElementoDC nom[15], TElementoDC num[15]);
 
-void agregarContacto(datosContacto contactos[SIZE], int *tam);
+agendaContactos iniciarAgenda();
 
-void listarAgenda(datosContacto contactos[SIZE], int tam);
+void agregarContacto(agendaContactos *contactos, TElementoDC nom[15], TElementoDC num[15]);
 
-void buscarNombre(datosContacto contactos[SIZE], int tam);
+void listarAgenda(agendaContactos contactos);
 
-void buscarNombreBinaria(datosContacto contactos[SIZE], int tam);
+int buscarNombre(agendaContactos contactos, TElementoDC nom[15]);
+
+int buscarNombreBinaria(agendaContactos contactos, TElementoDC nom[15]);

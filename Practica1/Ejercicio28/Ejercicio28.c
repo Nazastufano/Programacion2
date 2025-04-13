@@ -7,11 +7,15 @@ todos en la misma línea. ¿Como modificaría la lectura, si hubiera un valor po
 por teclado. La serie finaliza al ingresar el número 0. 
 
 */
+void sumaDesdeArch(char *);
 
 void main(){
+    sumaDesdeArch("datos.txt");
+}
+void sumaDesdeArch(char *nomArch){
     FILE *arch;
     int num, suma = 0;
-    arch = fopen("datos.txt", "r");
+    arch = fopen(nomArch, "r");
 
     if (arch == NULL)
         printf("Error en la apertura. Es posible que el archivo no exista \n");
@@ -21,5 +25,5 @@ void main(){
         
         fclose(arch);
     }
-    printf("La suma de los elementos del archivo es: %d", suma);
+    printf("La suma de los elementos del archivo es: %d \n", suma);
 }

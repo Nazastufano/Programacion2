@@ -2,21 +2,22 @@
 #include <stdio.h>
 #include <string.h>
 
+typedef char TElementoDC;
+
 typedef struct {
-    char nombre[SIZE][15];
-    char numero[SIZE][15];
-} datosContacto;
+    TElementoDC nombre[SIZE][15];
+    TElementoDC numero[SIZE][15];
+    int cant;
+} agendaContactos;
 
+void insertarOrdenado(agendaContactos *contactos, TElementoDC nom[15], TElementoDC num[15]);
 
+agendaContactos iniciarAgenda();
 
-void insertarOrdenado(datosContacto *contactos, char nom[15], char num[15], int tam);
+void agregarContacto(agendaContactos *contactos, TElementoDC nom[15], TElementoDC num[15]);
 
-void iniciarAgenda(datosContacto *contactos, int *tam);
+void listarAgenda(agendaContactos contactos);
 
-void agregarContacto(datosContacto *contactos, int *tam);
+int buscarNombre(agendaContactos contactos, TElementoDC nom[15]);
 
-void listarAgenda(datosContacto contactos, int tam);
-
-void buscarNombre(datosContacto contactos, int tam);
-
-void buscarNombreBinaria(datosContacto contactos, int tam);
+int buscarNombreBinaria(agendaContactos contactos, TElementoDC nom[15]);

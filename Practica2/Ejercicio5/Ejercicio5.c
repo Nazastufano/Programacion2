@@ -6,22 +6,22 @@
 a la carga, mostrar aquellos que sean positivos. Luego, para finalizar, liberar la memoria
 solicitada en tiempo de ejecución. */
 #define SIZE 100
-void CargarArreglo(FILE *,int *,int *[SIZE]);
+void CargarArreglo(char *,int *,int *[SIZE]);
 void MostrarPositivos(int *[SIZE], int);
 void LiberarMemoria(int *[SIZE], int);
 
 void main(){
-    FILE *arch;
     int *pNum[SIZE];
     int cantidad=-1;
-    CargarArreglo(arch, &cantidad, pNum);
+    CargarArreglo("enteros.txt", &cantidad, pNum);
     MostrarPositivos(pNum, cantidad);
     LiberarMemoria(pNum, cantidad);
 }
 
-void CargarArreglo(FILE *arch, int *cantidad, int *pNum[SIZE]){
+void CargarArreglo(char *nomArch, int *cantidad, int *pNum[SIZE]){
+    FILE *arch;
     int num;
-    if ((arch = fopen("enteros.txt", "r")) == NULL)
+    if ((arch = fopen(nomArch, "r")) == NULL)
         printf("Error al abrir el archivo. Es posible que no exista");
     else {
         while ((fscanf(arch,"%d",&num) == 1) && (*cantidad < SIZE)) {

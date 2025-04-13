@@ -34,9 +34,10 @@ void imprimir(Texto t){
     printf("\n");
 }
 
-void imprimirArch(Texto t, FILE * arch){
+void imprimirArch(Texto t, char *nomArch){
     int i;
-    if ((arch = fopen("texto.txt", "w"))==NULL)
+    FILE * arch;
+    if ((arch = fopen(nomArch, "w"))==NULL)
         printf("Problema al abrir el archivo. Es posible que no exista. \n");
     else {
         for (i = 0; i < t.largo; i++)

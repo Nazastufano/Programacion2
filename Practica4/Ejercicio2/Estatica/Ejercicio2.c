@@ -27,7 +27,7 @@ void main(){
     printf("El tamanio es: %d\n", tamanio(t));
     imprimir(t);
 
-    imprimirArch(t,arch);
+    imprimirArch(t,"texto.txt");
 
     printf("Caracter de la posicion %d es: %c \n", 5,caracterEn(t,5));
     t2 = crear(". como andan?");
