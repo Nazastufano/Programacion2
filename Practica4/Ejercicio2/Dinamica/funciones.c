@@ -10,9 +10,8 @@ Texto crear(char *c){
     
     cad.largo=i;
     cad.texto = malloc(sizeof(char)*cad.largo);
-    for (i = 0; i < cad.largo; i++){
+    for (i = 0; i < cad.largo; i++)
         cad.texto[i]=c[i];
-    }
 
     return cad;
 }

@@ -64,7 +64,6 @@ fraccion simplificar(fraccion f){
         if (f.numerador % i == 0 && f.denominador % i == 0)
             mcd = i;
     
-    
     f.numerador /= mcd;
     f.denominador /= mcd;
 
