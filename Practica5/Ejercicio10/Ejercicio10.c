@@ -3,8 +3,10 @@
 /* 10. Ingresar una secuencia de caracteres terminada en punto que representa una expresión
 aritmética.
     a. Comprobar que los paréntesis estén balanceados, de no ser así informar si falta
-    izquierdo o derecho. Los paréntesis son los únicos símbolos a controlar.
-    b. Agregar a la expresión la presencia y comprobación de corchetes y llaves. */
+    izquierdo o derecho. Los paréntesis son los únicos símbolos a controlar. Ejemplo
+    correcto: ( ( ) ( ) ). Ej. incorrectos: ( ( ) ( ) ; ( ) ) ( ; ( ) ) (
+    b. Agregar a la expresión la presencia y comprobación de corchetes y llaves. Ejemplos
+    correctos: { ( ) [ ( ) ] } ; ( { } ). Ej. incorrectos: ( { ) }; [ ( ) ; ( ) ] */
 
 void comprobarParentesis(TCola *);
 void cargarCola(TCola *);
@@ -29,7 +31,7 @@ void cargarCola(TCola *C){
     TElementoC elem;
     
     do{
-        printf("Ingrese elemento ( . = terminar)\n");
+        printf("Ingrese elemento ( '.' = terminar)\n");
         scanf(" %c", &elem);
         if (elem != '.')
             poneC(C,elem);
