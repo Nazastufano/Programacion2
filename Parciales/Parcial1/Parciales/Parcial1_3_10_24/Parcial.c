@@ -32,6 +32,15 @@ no debe desarrollar).
 iii) defina el tipo de la cola dinámica utilizando en el programa. Desarrollar SacaC(). Indicar en qué archivo/s
 iría cada definición/desarrollo. */
 
+typedef struct {
+    char patente[8];
+    int fechaJuliana;
+    char hora[6];
+    unsigned int tiempoAbonado[2];
+    unsigned int tiempoRealOcu[2];
+}TElementoAB;
+
+
 typedef struct nodito{
     char patente[8]; //ordenada por este campo
     int fechaJuliana;
@@ -136,7 +145,9 @@ void generarArchivoB(TListaD LD, char AG[6], int K, char nomArch[20]){
     subLista sAux;
     FILE* archB;
     subLista elem;
+    TElementoAB reg;
     int contMultas = 0;
+
     if ((archB = fopen(nomArch, "wb")) == NULL)
         printf("El archivo no se pudo abrir. Es posible que no exista\n");
     else {
@@ -146,9 +157,17 @@ void generarArchivoB(TListaD LD, char AG[6], int K, char nomArch[20]){
         if (aux != NULL && strcmp(AG, aux->codigo) == 0){
             sAux = aux->multas;
             while (sAux != NULL){
-                if (mesPar(sAux->fechaJuliana) && horaCorrecta(sAux->hora))
+                if (mesPar(sAux->fechaJuliana) && horaCorrecta(sAux->hora)){
                     contMultas++;
-                
+                    strcpy(reg.patente, sAux->patente);
+                    strcpy(reg.hora, sAux->hora);
+                    reg.fechaJuliana = sAux->fechaJuliana;
+                    reg.tiempoAbonado[0] = sAux->tiempoAbonado[0];
+                    reg.tiempoAbonado[1] = sAux->tiempoAbonado[1];
+                    reg.tiempoRealOcu[0] = sAux->tiempoRealOcu[0];
+                    reg.tiempoRealOcu[1] = sAux->tiempoRealOcu[1];
+                    fwrite(&reg, sizeof(TElementoAB), 1, archB);
+                }
                 sAux = sAux->sig;
             }
             if (contMultas > K && aux->estudiante == 'S')
@@ -156,7 +175,9 @@ void generarArchivoB(TListaD LD, char AG[6], int K, char nomArch[20]){
             else
                 printf("Al agente %s no le corresponde la bonificacion del 15%c\n", AG, '%');
         }
+        fclose(archB);
     }
+
 }
 
 void eliminarMultas(TListaD *LD, char X[6]){
@@ -189,7 +210,10 @@ void eliminarMultas(TListaD *LD, char X[6]){
             
             if (elim == (*LD).pri){
                 (*LD).pri = (*LD).pri->sig;
-                (*LD).pri->ant = NULL;
+                if ((*LD).pri == NULL)
+                    (*LD).ult = NULL;
+                else
+                    (*LD).pri->ant = NULL;
             } else if (elim == (*LD).ult){
                 (*LD).ult = (*LD).ult->ant;
                 (*LD).ult->sig = NULL;
