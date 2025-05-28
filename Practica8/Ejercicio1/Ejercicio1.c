@@ -87,5 +87,23 @@ G 0 0 0 1 1 0 0
 
 g) la lista de adyacencia que lo representa. 
 
+A -> D, F
+B -> C
+C -> A, F
+D -> B, F
+E -> D
+F -> D, G
+G -> D, E
+
+h) la matriz de adyacencia que lo representa, suponiendo que no es un grafo dirigido.
+
+  A B C D E F G
+A 0 0 1 1 0 1 0
+B 0 0 1 1 0 0 0
+C 1 1 0 0 0 1 0
+D 1 1 0 0 1 1 1
+E 0 0 0 1 0 0 1
+F 1 0 1 1 0 0 1
+G 0 0 0 1 1 1 0
 */
 
