@@ -63,9 +63,9 @@ int obtenerGradoMedMat(int matAdy[10][10], int vertice){
     int i, j, grado=0;
 
     for (i = 0; i < 10; i++)
-        for (j = i+1; j < 10; j++)
+        for (j = i; j < 10; j++)
             if (j == vertice || i == vertice)
-                    grado++;
+                grado += matAdy[i][j];
         
     return grado;
 }

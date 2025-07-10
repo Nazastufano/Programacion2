@@ -53,7 +53,7 @@ void main(){
 
     eliminarPatente(&L, &LC, P, resumen);
 }
-
+//Incompleto
 void procesarArch(TListaC LC, TLista *L, char nomArch[20]){
     FILE *archB;
     TListaC auxLC;
