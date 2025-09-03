@@ -1,7 +1,28 @@
 #include <stdio.h>
 #include "fechas.h"
 #include <string.h>
-/* Ej 2.- Una consultora de RRHH para proyectos tecnológicos*/
+
+/* Ej 2.- Una consultora de RRHH para proyectos tecnológicos meneja una lista simplemente enlazada con Sublistas
+con la siguiente información en cada nodo: 
+    Id Persona (ordenado, no se repite, cadena de 6)
+    Rol (0..9, 0 indica que no tiene proyecto, sino es el rol en el proyecto actual, una persona no puede estar
+    en más de un proyecto a la vez o en más de un rol en el mismo proyecto a la vez) 
+    Fecha inicio (cadena de 8, aaaammdd, vacío si no tiene proyecto)
+    Sublista de proyectos (puede estar vacía, son los roles/proyectos en el que concluyó su participación),
+    en cada nodo: Empresa (puede repetirse, ordenada, cadena de 10, si inicia con # es extranjera), Rol (1..9),
+    Meses que trabajó (entero corto)
+Se pide resolver, modularizando:
+a) En un archivo de texto FEBRERO.TXT, se encuentra la información de las personas (dato correcto) que
+   participan en proyectos en el mes de febrero de 2023. EN cada línea (separando cada dato por un blanco) se
+   tiene: IdPersona (ordenado, cadena de 6), Empresa (cadena de 10), Rol, Terminó, [S/N]. Con la información
+   del archivo, actualizar la lista y sublistas según corresponda.
+     Nota: Suponer la existencia de una función CANTM, en la librería fechas.h que recibe dos cadenas de formato
+   aaaamm y retorna la diferencia en meses entre ambas. NO DESARROLLAR CANTM
+b) Dados un P y E, eliminar todos los proyectos asociados a la empresa E de la persona P (puede o no existir). Al
+   finalizar, indicar en cuántos proyectos de E la persona P ha concluido su participación. No eliminar el nodo
+   de la lista si quedara sin proyectos
+c) Gnerar una lista doble que en cada noto tenga Empresa (ordenada, cadena de 10) y CantP en la que figuren
+   solo las empresas extranjeras siendo CantP la cantidad de personas distintas que ha contratado. */
 
 
 #define ST6 7

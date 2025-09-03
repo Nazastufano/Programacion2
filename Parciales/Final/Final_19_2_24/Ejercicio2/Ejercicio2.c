@@ -59,6 +59,7 @@ typedef struct {
 
 
 void recorrerCola(TListaD LP, TCola *C, int X);
+void listarPorInterprete(TListaD LP, char idInterprete[ST4], int X, int Y);
 
 void main(){
     TListaD LP;
@@ -83,8 +84,7 @@ void main(){
     scanf("%d", &X);
     printf("Ingrese otro id de una playlist: \n");
     scanf("%d", &Y);
-
-
+    listarPorInterprete(LP, idInterprete, X, Y);
 }
 
 void recorrerCola(TListaD LP, TCola *C, int X){

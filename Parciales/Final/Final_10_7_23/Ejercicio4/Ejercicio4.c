@@ -1,9 +1,12 @@
 #include <stdio.h>
+
 /* Ej 4.- Dado un grafo acíclico de N vértices (numerados de 1 a N) con aristas ponderadas almacenado en
 la mitad inferior de una matriz de adyacencia, determinar si todos los vértices pares (2, 4, etc) tienen el
 mismo grado. [No se permite el uso de estructuras auxiliares] */
 
 #define MAX 5
+
+int verifica(int matAdy[MAX][MAX], int N);
 
 void main(){
     int matAdy[MAX][MAX];

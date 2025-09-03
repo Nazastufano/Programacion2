@@ -1,6 +1,8 @@
 #include <stdio.h>
+
 /* Ej 4.- Dado un grafo de N vértices implementado en una matriz de adyacencia, determinar mediante
 una función recursiva entera si los primeros K vértices (K dato) tienen el mismo grado. */
+
 #define MAX 10
 
 int analisisRec(int matAdy[MAX][MAX], int i, int j, int N, int K, int grAnt, int grAct);
@@ -29,10 +31,6 @@ int analisisRec(int matAdy[MAX][MAX], int i, int j, int N, int K, int grAnt, int
             return analisisRec(matAdy, i, j+1, N, K, grAnt, grAct);
         else        
             return (grAnt == grAct || i == 0) && analisisRec(matAdy, i+1,0,N,K,grAct, 0);
-    
-                
     } else
-        return 1;
-
-    
+        return 1;    
 }

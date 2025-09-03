@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /* Ej 4.- Dado un árbol binario que proviene de la transformación de un bosque de enteros, hallar la
 cantidad de nodos del bosque que tenían grado par. Definir tipos. */
 
@@ -8,6 +9,10 @@ typedef struct nodo{
 }nodo;
 
 typedef nodo * ARBOL;
+
+int contGrado(ARBOL A);
+int contNodos(ARBOL A);
+int contar(ARBOL A, int izq); 
 
 void main(){
     ARBOL A;

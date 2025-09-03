@@ -4,17 +4,17 @@
 #include <ctype.h>
 
 /* Ej 2.- (Utilizar TDA Pila) Se tiene una lista L doblemente enlazada ordenada de forma ascendente que 
-contiene en cada nodo una cadena de caracteres. Se tiene ademas, una Pila P que contiene en cada 
-elemento dos datos: un entero E (es 0) y un caracter C.
+contiene en cada nodo una cadena de caracteres. Se tiene además, una Pila P que contiene en cada 
+elemento dos datos: un entero E (es 0) y un carácter C.
 Se pide: 
 A) Utilizando el TDA Pila, desarrollar en C subprogramas para: 
-   i) Actualizar P de forma tal que, en cada elemento de P, E contenga la cantidad de elementos de fa 
+   i) Actualizar P de forma tal que, en cada elemento de P, E contenga la cantidad de elementos de la 
 lista que tienen a C como inicial. El recorrido sobre P debe ser recursivo. 
    ii) Eliminar de L los nodos que contengan cadenas cuya inicial no este en P almacenando en un 
 archivo binario RESUMEN.DAT de structs la siguiente información para las cadenas eliminadas: 
 Cadena, CantVocales, CantConsonantes 
 b) Suponer que P es estatica. Definir los tipos asociados y desarrollar SacaP() y PoneP(). lndicar en que 
-archivo(s) estan las definiciones y funciones. */
+archivo(s) están las definiciones y funciones. */
 
 
 typedef struct nodoD{
@@ -33,6 +33,12 @@ typedef struct {
    int cantVocales;
    int cantConsonantes;
 } TElementoA;
+
+void actualizarP(TListaD L, TPila *P);
+void eliminarNodos(TListaD *L, TPila P, char nom[21]);
+int esVocal(char car);
+int estaEnPila(TPila P, char car);
+void cargarLetras(TElementoA *elemA);
 
 void main(){
    TListaD L;

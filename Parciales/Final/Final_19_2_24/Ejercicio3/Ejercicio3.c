@@ -1,10 +1,10 @@
 #include "TDAArbol.h"
 #include <stdio.h>
 
-
 /* Ej 3.- (Utilizar TDA N-Ario) Dado un árbol A N-Ario de enteros, determinar si hay exactamente K nodos
 no hoja que tienen grado igual al nivel en el que se encuentran (K es dato) */
 
+void analizar(ARBOL A, pos P, int nivel, int K, int *cantN);
 
 void main(){
     ARBOL A;
@@ -19,7 +19,7 @@ void main(){
     if (cantN == K)
         printf("Existen exactamente K nodos no hoja que tienen grado igual al nivel en el que se encuentran \n");
     else
-        printf("No hay exactamente K nodos no hoja que tienen grado igual al nivel en el que se encuentran \n")
+        printf("No hay exactamente K nodos no hoja que tienen grado igual al nivel en el que se encuentran \n");
 }
 
 

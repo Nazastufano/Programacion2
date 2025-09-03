@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "TDAPila.h"
+
 /* Ej 2) Un hotel con 20 habitaciones cuenta con una lista L que mantiene las reservas ya confirmadas del
 mes de juli conteniendo en cada nodo: Habitaciones(1..20) (ordenada, no se repite), Capacidad, Precio
 por persona, Sublista de reservas confirmadas: en cada nodo contiene IdClienteResp (Cadena de 8),
@@ -18,13 +19,12 @@ se tiene H (no se repite en P), D, C siendo H la habitación, D día de inicio, 
     -   hallar y mostrar cuánto dinero le cuesta al hotel la baja de estas reservas de Julio;
     NOTAS: P puede perderse. No eliminar habitaciones de L
 B) Definir el tipo de P asumiendo que es estática. Desarrollar SacaP(). Indicar en qué archivo(s) se
-encuentran estas definiciones.
-
-*/
+encuentran estas definiciones. */
 
 #define ST8 9
 #define MAXI 20
 #define MAXJ 31
+
 typedef struct nodito{
     char idClienteResp[ST8];
     unsigned int ocupantes;
@@ -43,6 +43,10 @@ typedef struct nodo{
 }nodo;
 
 typedef nodo * TLista;
+
+void generarMat(TLista L, int M[MAXI][MAXJ]);
+int cantHOcup(int M[MAXI][MAXJ], int i, int j);
+void eliminarSubL(TLista L, TPila *P);
 
 void main(){
     TLista L;

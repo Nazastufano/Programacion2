@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /* Ej 3.- (Utulizar TDA N-Ario) Dados un árbol AN N-Ario de enteros y un árbol binario AB que proviene de
-la transforamción de un árbol general de enteros, desarrollar una función int que obtenga y devuelva la
+la transformación de un árbol general de enteros, desarrollar una función int que obtenga y devuelva la
 cantidad de elementos de AN que verifican que, si su grado es G, G esta en el árbol general en un 
 nivel menor a K. (K dato positivo) [Si la solución se resuelve mediante una función void, el puntaje obtenido
 no superará la mitad del asignado] */
@@ -14,8 +14,12 @@ typedef struct nodo{
 
 typedef nodo * ARBOLB;
 
+int calcGrado(ARBOLB AB);
+int recorrerAB(ARBOLB AB, int izq, int nivel, int K, int G);
+int cantVerifican(ARBOLAN AN, pos P, ARBOLB AB, int K);
+
 void main(){
-    ARBOLNA AN;
+    ARBOLAN AN;
     ARBOLB AB;
     int K;
 

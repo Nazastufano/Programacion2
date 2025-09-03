@@ -6,18 +6,18 @@
 reproducidas mediante una lista simple enlazada con la siguiente estructura:
     Id Interprete   (Cadena de 10, ordenada)
     Sublista de canciones
-        Id Canción (entero, se puede repeteir para diversos interpretes)
+        Id Canción (entero, se puede repetir para diversos interpretes)
         Titulo canción
         Duración (en segundos)
 Existe una lista de reproducción implementada mediante una lista circular, en la que cada nodo
 contiene Id Canción e Id Interprete. El orden de dicha lista es el de la reproducción de las canciones, o
-sea que no se encuentra ordeanda por ningún criterio.
+sea que no se encuentra ordenada por ningún criterio.
 Se pide, definir los tipos de las estructuras utilizadas y resolver:
-    Dado un Id intérprete, listar todas las cacnioens disponibles de él (con el formato indicado más 
+    Dado un Id intérprete, listar todas las canciones disponibles de él (con el formato indicado más 
     abajo), eliminando las que estén, de la lista de reproducción. Al final del listado, mostrar la cantidad
     de canciones eliminadas y su duración en minutos. 
     Intérprete: XXXXXXXXXXX
-        Id Cancion      Titulo Cancion      Eliminiada
+        Id Cancion      Titulo Cancion      Eliminada
         9999999         XXXXXXXXXXXXXX      N
         9999999         XXXXXXXXXXXXXX      S
         .....
@@ -50,6 +50,8 @@ typedef struct nodoC{
 }nodoC;
 
 typedef nodoC * TListaC;
+
+void listar(TLista L, TListaC *LC, char idInterprete[ST10]);
 
 void main(){
     TLista L;

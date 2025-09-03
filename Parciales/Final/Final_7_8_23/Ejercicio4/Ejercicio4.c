@@ -1,6 +1,7 @@
 #include "TDAArbol.h"
 #include <stdio.h>
-/* Ej 4.- (Utilizar TOA N.Ario) Dado un arbol N-ario de enteros, verificar mediante una soluci6n no void 
+
+/* Ej 4.- (Utilizar TDA N.Ario) Dado un árbol N-ario de enteros, verificar mediante una solución no void 
 que haya exactamente un nodo de grado K (K es dato de entrada). */
 
 int verifica(ARBOL A, pos P, int K);

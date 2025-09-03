@@ -27,6 +27,8 @@ typedef struct nodoA{
 
 typedef nodoA * ARBOL;
 
+int analizarLista(TVTLista listaAdy[MAX], ARBOL ABB, int N);
+int busquedaABB(ARBOL ABB, int valorMin);
 
 void main(){
     TVTLista listaAdy[MAX];
